@@ -1,8 +1,6 @@
 import hudson.tasks.test.AbstractTestResultAction
 
-  
-
-node {
+  node {
 
 	stage 'Checkout'
 
@@ -12,8 +10,6 @@ node {
 
 		checkout scm
 
-
-
 	stage 'Build'
 
 		bat "nuget restore \"${workspace}/YourProject.sln\""
@@ -21,8 +17,6 @@ node {
 		bat "\"C:/Program Files/dotnet/dotnet.exe\" restore \"${workspace}/YourProject.sln\""
 
 		bat "\"C:/Program Files/dotnet/dotnet.exe\" build \"${workspace}/YourProject.sln\""
-
-
 
 	stage 'UnitTests'
 
